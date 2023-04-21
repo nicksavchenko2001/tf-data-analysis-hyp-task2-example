@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
-
+from scipy.stats import laplace, norm, ks_2samp, anderson_ksamp, cramervonmises_2samp
 
 chat_id = 781119239 # Ваш chat ID, не меняйте название переменной
 
 def solution(x: np.array, y: np.array) -> bool:
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+    
+    res = anderson_ksamp([x, y])
+    return res.pvalue < 0.04
+    
