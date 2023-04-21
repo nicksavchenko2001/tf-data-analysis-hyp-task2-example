@@ -6,6 +6,6 @@ chat_id = 781119239 # Ваш chat ID, не меняйте название пе�
 
 def solution(x: np.array, y: np.array) -> bool:
     
-    res = anderson_ksamp([x, y])
-    return res.pvalue < 0.04
+    p_value = anderson_ksamp([x, y]).pvalue
+    return p_value < 0.04
     
